@@ -1,0 +1,72 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+   int N,T,i,flag,j,d,n;
+   cin>>T;
+   for(i=0;i<T;i++)
+   {
+       flag=0;
+       cin>>N;
+       n=N;
+       while(N--)
+       {
+           if(N==1)
+            flag=0;
+           if(N==2||N==3)
+            flag==1;
+           if(N>3)
+           {
+               d=N/2;
+               for(j=2;j<=d;j++)
+               {
+                   if(N%j!=0)
+                   {
+                       flag=1;
+                   }
+                   else
+                   {
+                       flag=0;
+                       break;
+                   }
+               }
+           }
+           if(flag==1&&N<n)
+           {
+               cout<<N<<" ";
+               flag=0;
+               break;
+           }
+       }
+       while(++N)
+       {
+           if(N==1)
+            flag=0;
+           if(N==2||N==3)
+            flag==1;
+           if(N>3)
+           {
+               d=N/2;
+               for(j=2;j<=d;j++)
+               {
+                   if(N%j!=0)
+                   {
+                       flag=1;
+                   }
+                   else
+                   {
+                       flag=0;
+                       break;
+                   }
+               }
+           }
+           if(flag==1&&N>n)
+           {
+               cout<<N<<endl;
+               break;
+           }
+       }
+   }
+   return 0;
+}
